@@ -35,7 +35,7 @@ Example output:
 3) Time values must be <= INTEGER.MAX_INT
 
 ## results
-1) sorted by key
+1) Sorted alphabetically by key
 2) One significant digit (double, not int: this differs from example)
 3) Totals are not allowed to roll over MAX_INT size
 4) Blank keys are not output
