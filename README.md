@@ -8,22 +8,22 @@ This class keeps running totals of "action" (integer) time values, and collates 
 ## Method addAction(string) returning error
 Keeps track of average time for all input strings such as
 
-'''
+```
 {"action":"jump", "time":100}
 {"action":"run", "time":75}
 ("action":"jump", "time":200}
-'''
+```
 
 ## method getStats() returning string
 Output formatted JsON average by "action"
 Example output:
 
-'''
+```
 [
 {"action":"jump","avg":150.0},
 {"action":"run","avg":75.0}
 ]
-'''
+```
 
 (Note that JsON may be formatted in a simple contracted string)
 
