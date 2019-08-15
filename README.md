@@ -21,3 +21,4 @@ Output formatted JsON average by "action"
 2) One significant digit (double, not int: this differs from example)
 3) Totals are not allowed to roll over MAX_INT size
 4) Blank keys are not output
+5) Synchronized so changes during invocation are not returned 

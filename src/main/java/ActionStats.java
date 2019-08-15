@@ -56,7 +56,7 @@ public class ActionStats {
      *
      * @return
      */
-    public String getStats() {
+    public synchronized String getStats() {
 
         try {
 
@@ -64,10 +64,15 @@ public class ActionStats {
             ArrayList<ActionAverage> averageList = new ArrayList<ActionAverage>();
 
             // calc them all
-            // concurrency begins here -
-            // any items added by other threads
-            // after this statement runs
-            // are not included in the stats
+            // concurrency could begin here
+            // but if another thread adds/changes totals
+            // after this thread invokes the method
+            // the changes would be included
+
+            // if that's OK,
+            // remove the synchronized
+            // and any changes to this point will be captured
+            // the entrySet does not change here after invocation
             for (Map.Entry<String, TimeTotal> timeEntry: actionMap.entrySet() ) {
 
                 // individually, collect the good ones
