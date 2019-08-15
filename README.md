@@ -11,6 +11,8 @@ Keeps track of average time for all input strings such as
 ## method getStats() returning string
 Output formatted JsON average by "action"
 
+# Notes
+
 ## Acceptable "action" JsON objects:
 1) must include both "action" and "time" values (missing/null/empty not allowed)
 2) Time values must be natural numbers (0 or greater)
@@ -22,3 +24,11 @@ Output formatted JsON average by "action"
 3) Totals are not allowed to roll over MAX_INT size
 4) Blank keys are not output
 5) Synchronized so changes during invocation are not returned 
+
+# To build and test code
+1) clone the repo (git required)
+2) install maven
+3) run mvn clean verify (this will execute all the unit and integration tests)
+
+To use the library in your own class, either reference locally, or build and publish to a maven repo - 
+version (pom.xml)

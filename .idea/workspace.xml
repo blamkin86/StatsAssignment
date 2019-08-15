@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="635e085e-b1f5-42d7-8d5c-d6d6b74eb7c9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ActionStats.java" afterPath="$PROJECT_DIR$/src/main/java/ActionStats.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,12 +27,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="207">
-                <caret line="23" column="9" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+              <first_editor relative-caret-position="260">
+                <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -41,7 +40,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActionStats.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ActionStats.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ActionStats.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="254">
@@ -200,8 +199,8 @@
         <option value="$PROJECT_DIR$/src/main/java/entities/Action.java" />
         <option value="$PROJECT_DIR$/src/test/java/util/ActionStringParserTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/JsonUtils.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/ActionStats.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -557,7 +556,7 @@
       <option name="presentableId" value="Default" />
       <updated>1565881947772</updated>
       <workItem from="1565881951913" duration="5326000" />
-      <workItem from="1565888511742" duration="13622000" />
+      <workItem from="1565888511742" duration="13839000" />
     </task>
     <servers />
   </component>
@@ -594,7 +593,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18948000" />
+    <option name="totallyTimeSpent" value="19165000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1882" y="12" width="1784" height="956" extended-state="0" />
@@ -853,17 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="207">
-            <caret line="23" column="9" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ActionStats.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
@@ -873,6 +861,17 @@
             <element signature="e#481#500#0" expanded="true" />
             <element signature="e#1820#1835#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="260">
+            <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
