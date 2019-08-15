@@ -3,6 +3,8 @@
 Offer class ActionStats
 in com.blamkin.jumpcloud.assignment;
 
+This class keeps running totals of "action" (integer) time values, and collates and reports a sorted list of average times by action.
+
 ## Method addAction(string) returning error
 Keeps track of average time for all input strings such as
 1) {"action":"jump", "time":100}
