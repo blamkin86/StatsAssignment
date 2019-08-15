@@ -26,9 +26,13 @@ Output formatted JsON average by "action"
 5) Synchronized so changes during invocation are not returned 
 
 # To build and test code
-1) clone the repo (git required)
+1) Install Java 8
 2) install maven
-3) run mvn clean verify (this will execute all the unit and integration tests)
+3) install git
+4) clone the repo (git required)
+5) Have access to the dependencies in pom.xml (internet access to maven repo)
+
+run mvn clean verify (this will execute all the unit and integration tests)
 
 To use the library in your own class, either reference locally, or build and publish to a maven repo - 
 version (pom.xml)
