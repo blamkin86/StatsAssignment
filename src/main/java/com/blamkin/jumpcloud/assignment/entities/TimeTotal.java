@@ -1,4 +1,4 @@
-package entities;
+package com.blamkin.jumpcloud.assignment.entities;
 
 /**
  * Object representing the count of actions and their total

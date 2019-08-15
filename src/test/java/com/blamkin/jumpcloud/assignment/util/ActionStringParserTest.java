@@ -1,6 +1,6 @@
-package util;
+package com.blamkin.jumpcloud.assignment.util;
 
-import entities.Action;
+import com.blamkin.jumpcloud.assignment.entities.Action;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
