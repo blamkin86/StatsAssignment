@@ -1,6 +1,7 @@
 # statsassignment
 
-Offer class com.blamkin.jumpcloud.statsassigment.ActionStats
+Offer class ActionStats
+in com.blamkin.jumpcloud.assignment;
 
 ## Method addAction(string) returning error
 Keeps track of average time for all input strings such as
