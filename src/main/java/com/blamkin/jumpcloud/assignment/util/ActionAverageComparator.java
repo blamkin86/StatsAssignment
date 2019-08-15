@@ -1,6 +1,6 @@
-package util;
+package com.blamkin.jumpcloud.assignment.util;
 
-import entities.ActionAverage;
+import com.blamkin.jumpcloud.assignment.entities.ActionAverage;
 
 import java.util.Comparator;
 

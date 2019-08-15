@@ -1,4 +1,4 @@
-package entities;
+package com.blamkin.jumpcloud.assignment.entities;
 
 /**
  * Represents one action

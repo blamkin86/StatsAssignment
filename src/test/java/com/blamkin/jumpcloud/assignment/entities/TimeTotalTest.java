@@ -1,4 +1,4 @@
-package entities;
+package com.blamkin.jumpcloud.assignment.entities;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

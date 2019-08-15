@@ -1,13 +1,19 @@
-import com.fasterxml.jackson.databind.ObjectMapper;
-import entities.Action;
-import entities.ActionAverage;
-import entities.TimeTotal;
-import util.ActionAverageComparator;
-import util.JsonUtils;
+package com.blamkin.jumpcloud.assignment;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.blamkin.jumpcloud.assignment.entities.Action;
+import com.blamkin.jumpcloud.assignment.entities.ActionAverage;
+import com.blamkin.jumpcloud.assignment.entities.TimeTotal;
+import com.blamkin.jumpcloud.assignment.util.ActionAverageComparator;
+import com.blamkin.jumpcloud.assignment.util.JsonUtils;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+import static java.lang.System.exit;
 
 /**
  * Main class for tracking "action" statistics
@@ -107,5 +113,40 @@ public class ActionStats {
 
         // probably talk to PM or Dev about handling bad values
         return null;
+    }
+
+    // direct invocation from a pipe
+    public static void main(String[] args) {
+
+        try ( InputStreamReader isReader = new InputStreamReader(System.in);
+                BufferedReader bufReader = new BufferedReader(isReader); ) {
+
+            // collect stats
+            ActionStats stats = new ActionStats();
+
+            // start reading from the input
+            String in = null;
+            while ((in=bufReader.readLine()) != null) {
+                // read, but
+                // inform problems and ignore bad lines
+                try {
+                    stats.addAction(in);
+                }
+                catch (IllegalArgumentException iae) {
+                    System.out.println("Invalid line: " + in);
+                    iae.printStackTrace();
+                }
+            }
+
+            // output!
+            System.out.println(stats.getStats());
+
+        }
+        catch (Exception e ){
+            System.out.println("Unable to produce statistics");
+            e.printStackTrace();
+            exit(1);
+        }
+
     }
 }

@@ -1,10 +1,9 @@
-package util;
+package com.blamkin.jumpcloud.assignment.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.javaws.exceptions.InvalidArgumentException;
-import entities.Action;
-import entities.ActionAverage;
-import entities.TimeTotal;
+import com.blamkin.jumpcloud.assignment.entities.Action;
+import com.blamkin.jumpcloud.assignment.entities.ActionAverage;
+import com.blamkin.jumpcloud.assignment.entities.TimeTotal;
 import org.apache.commons.lang3.StringUtils;
 import org.json.JSONObject;
 
@@ -67,7 +66,7 @@ public class JsonUtils {
     }
 
     // validate according to our rules
-    public static final void validateInputActionString(String actionString) throws InvalidArgumentException {
+    public static final void validateInputActionString(String actionString) throws IllegalArgumentException {
 
         if (StringUtils.isEmpty(actionString)) {
             throw new IllegalArgumentException("Cannot parse empty action");

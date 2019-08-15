@@ -34,5 +34,12 @@ Output formatted JsON average by "action"
 
 run mvn clean verify (this will execute all the unit and integration tests)
 
-To use the library in your own class, either reference locally, or build and publish to a maven repo - 
-version (pom.xml)
+# To run the executable jar
+From within the repo folder:
+
+java -jar target/statsassignment-1.0-SNAPSHOT.jar < src/main/resources/exampleactions.json
+
+will run the executable with the assignment inputs, and provide output
+
+You can also run the jar with your own inputs, piped to the running jar
+
