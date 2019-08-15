@@ -16,9 +16,12 @@ Keeps track of average time for all input strings such as
 Output formatted JsON average by "action"
 Example output:
 
+
 [
+
 {"action":"jump","avg":150.0},
 {"action":"run","avg":75.0}
+
 ]
 
 (Note that JsON may be formatted in a simple contracted string)
