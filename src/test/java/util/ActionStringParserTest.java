@@ -9,6 +9,11 @@ import org.junit.runners.JUnit4;
 
 import static org.hamcrest.Matchers.containsString;
 
+/**
+ * Test the JsON action parser
+ *
+ *
+ */
 @RunWith(JUnit4.class)
 public class ActionStringParserTest {
 
@@ -17,7 +22,7 @@ public class ActionStringParserTest {
 
     // test that null strings don't work
     @Test
-    public void parseActionString_whenPassedNullArgument_throwsIllegalArgument() throws Exception {
+    public void validateInputActionString_whenPassedNullArgument_throwsIllegalArgument() throws Exception {
 
         // that looks bad
         String testCase = null;
@@ -28,13 +33,13 @@ public class ActionStringParserTest {
         thrown.expectMessage(containsString("empty"));
 
         // run it
-        ActionStringParser.parseActionString(testCase);
+        JsonUtils.validateInputActionString(testCase);
 
     }
 
     // test that empty strings don't work
     @Test
-    public void parseActionString_whenPassedEmptyArgument_throwsIllegalArgument() throws Exception {
+    public void validateInputActionString_whenPassedEmptyArgument_throwsIllegalArgument() throws Exception {
 
         // that looks empty
         String testCase = "";
@@ -43,13 +48,13 @@ public class ActionStringParserTest {
         thrown.expect(IllegalArgumentException.class);
 
         // run it
-        ActionStringParser.parseActionString(testCase);
+        JsonUtils.validateInputActionString(testCase);
 
     }
 
     // test that crap strings don't work
     @Test
-    public void parseActionString_whenPassedCrapJson_throwsIllegalArgument() throws Exception {
+    public void validateInputActionString_whenPassedCrapJson_throwsIllegalArgument() throws Exception {
 
         // that doesn't even look like JsON yo.
         String testCase = "fizz\"buzz}:";
@@ -58,13 +63,13 @@ public class ActionStringParserTest {
         thrown.expect(IllegalArgumentException.class);
 
         // run it
-        ActionStringParser.parseActionString(testCase);
+        JsonUtils.validateInputActionString(testCase);
 
     }
 
     // test that plain old JsON strings don't work
     @Test
-    public void parseActionString_whenPassedEmptyJson_throwsIllegalArgument() throws Exception {
+    public void validateInputActionString_whenPassedEmptyJson_throwsIllegalArgument() throws Exception {
 
         // hey nice Json. How 'bout some fields?
         String testCase = "{}";
@@ -73,13 +78,13 @@ public class ActionStringParserTest {
         thrown.expect(IllegalArgumentException.class);
 
         // run it
-        ActionStringParser.parseActionString(testCase);
+        JsonUtils.validateInputActionString(testCase);
 
     }
 
     // test good json missing the action and time fails
     @Test
-    public void parseActionString_whenPassedNonActionJson_throwsIllegalArgument() throws Exception {
+    public void validateInputActionString_whenPassedNonActionJson_throwsIllegalArgument() throws Exception {
 
         // well, that's Json alright. Not an action, but good try.
         String testCase = "{ \"field\":value }";
@@ -88,13 +93,13 @@ public class ActionStringParserTest {
         thrown.expect(IllegalArgumentException.class);
 
         // run it
-        ActionStringParser.parseActionString(testCase);
+        JsonUtils.validateInputActionString(testCase);
 
     }
 
     // test good json missing JUST the action fails
     @Test
-    public void parseActionString_whenPassedMissingNameJson_throwsIllegalArgument() throws Exception {
+    public void validateInputActionString_whenPassedMissingActionJson_throwsIllegalArgument() throws Exception {
 
         // Json with just a time value, action is missing
         String testCase = "{ \"" + Action.FIELD_TIME +"\":123 }";
@@ -103,33 +108,33 @@ public class ActionStringParserTest {
         thrown.expect(IllegalArgumentException.class);
 
         // run it
-        ActionStringParser.parseActionString(testCase);
+        JsonUtils.validateInputActionString(testCase);
 
     }
 
     // test good json missing JUST the time fails
     @Test
-    public void parseActionString_whenPassedMissingTimeJson_throwsIllegalArgument() throws Exception {
+    public void validateInputActionString_whenPassedMissingTimeJson_throwsIllegalArgument() throws Exception {
 
         // JsON with just a name value
-        String testCase = "{ \"" + Action.FIELD_NAME +"\":\"value\" }";
+        String testCase = "{ \"" + Action.FIELD_ACTION +"\":\"value\" }";
 
         // better get one of these
         thrown.expect(IllegalArgumentException.class);
 
         // run it
-        ActionStringParser.parseActionString(testCase);
+        JsonUtils.validateInputActionString(testCase);
 
     }
 
-    // test good Action JsON but empty value for name, fails
+    // test good Action JsON but empty value for Action, fails
     @Test
-    public void parseActionString_whenPassedValidJsonMissingNameValue_throwsIllegalArgument() throws Exception {
+    public void validateInputActionString_whenPassedValidJsonMissingActionValue_throwsIllegalArgument() throws Exception {
 
         // make good Json with the known fields
         // but don't pass any values
         String testCase = "{ " +
-                    "\"" + Action.FIELD_NAME +"\":\"\"," +
+                    "\"" + Action.FIELD_ACTION +"\":\"\"," +
                     "\"" + Action.FIELD_TIME +"\":\"\" " +
                 "}";
 
@@ -137,18 +142,18 @@ public class ActionStringParserTest {
         thrown.expect(IllegalArgumentException.class);
 
         // run it
-        ActionStringParser.parseActionString(testCase);
+        JsonUtils.validateInputActionString(testCase);
 
     }
 
     // test good Action JsON but empty value for time, fails
     @Test
-    public void parseActionString_whenPassedValidJsonMissingTimeValue_throwsIllegalArgument() throws Exception {
+    public void validateInputActionString_whenPassedValidJsonMissingTimeValue_throwsIllegalArgument() throws Exception {
 
         // make good Json
         // but pass no value for the time
         String testCase = "{ " +
-                "\"" + Action.FIELD_NAME +"\":\"jump\"," +
+                "\"" + Action.FIELD_ACTION +"\":\"jump\"," +
                 "\"" + Action.FIELD_TIME +"\":\"\" " +
                 "}";
 
@@ -156,19 +161,19 @@ public class ActionStringParserTest {
         thrown.expect(IllegalArgumentException.class);
 
         // run it
-        ActionStringParser.parseActionString(testCase);
+        JsonUtils.validateInputActionString(testCase);
 
     }
 
     // test good Action JsON but empty value for time, fails
     @Test
-    public void parseActionString_whenPassedValidJsonBadTimeValue_throwsIllegalArgument() throws Exception {
+    public void validateInputActionString_whenPassedValidJsonBadTimeValue_throwsIllegalArgument() throws Exception {
 
         // make good JsON
         // but pass a negative time,
         // which is disallowed
         String testCase = "{ " +
-                "\"" + Action.FIELD_NAME +"\":\"jump\"," +
+                "\"" + Action.FIELD_ACTION +"\":\"jump\"," +
                 "\"" + Action.FIELD_TIME +"\":-123 " +
                 "}";
 
@@ -176,7 +181,7 @@ public class ActionStringParserTest {
         thrown.expect(IllegalArgumentException.class);
 
         // run it
-        ActionStringParser.parseActionString(testCase);
+        JsonUtils.validateInputActionString(testCase);
 
     }
 
@@ -186,12 +191,12 @@ public class ActionStringParserTest {
 
         // Good Json with zero time
         String testCase = "{ " +
-                "\"" + Action.FIELD_NAME +"\":\"jump\"," +
+                "\"" + Action.FIELD_ACTION +"\":\"jump\"," +
                 "\"" + Action.FIELD_TIME +"\":0" +
                 "}";
 
         // run it - no exception expected
-        ActionStringParser.parseActionString(testCase);
+        JsonUtils.parseActionString(testCase);
 
     }
 
@@ -201,12 +206,12 @@ public class ActionStringParserTest {
 
         // Good JsON with good time
         String testCase = "{ " +
-                "\"" + Action.FIELD_NAME +"\":\"jump\"," +
+                "\"" + Action.FIELD_ACTION +"\":\"jump\"," +
                 "\"" + Action.FIELD_TIME +"\":123" +
                 "}";
 
         // run it - no exception expected
-        ActionStringParser.parseActionString(testCase);
+        JsonUtils.parseActionString(testCase);
 
     }
 
@@ -216,22 +221,22 @@ public class ActionStringParserTest {
 
         // Good JsON with very large time integer
         String testCase = "{ " +
-                "\"" + Action.FIELD_NAME +"\":\"jump\"," +
+                "\"" + Action.FIELD_ACTION +"\":\"jump\"," +
                 "\"" + Action.FIELD_TIME +"\":" + Integer.MAX_VALUE +
                 "}";
 
         // run it - no exception expected
-        ActionStringParser.parseActionString(testCase);
+        JsonUtils.parseActionString(testCase);
 
     }
 
     // test good Action JsON with a time too big for an integer, fails
     @Test
-    public void parseActionString_whenPassedActionWithTooBigTime_throwsException() throws Exception {
+    public void validateInputActionString_whenPassedActionWithTooBigTime_throwsException() throws Exception {
 
         // Good JsON with out-of-range integer
         String testCase = "{ " +
-                "\"" + Action.FIELD_NAME +"\":\"jump\"," +
+                "\"" + Action.FIELD_ACTION +"\":\"jump\"," +
                 "\"" + Action.FIELD_TIME +"\":" + Integer.MAX_VALUE + "0" +
                 "}";
 
@@ -239,7 +244,7 @@ public class ActionStringParserTest {
         thrown.expect(IllegalArgumentException.class);
 
         // run it
-        ActionStringParser.parseActionString(testCase);
+        JsonUtils.validateInputActionString(testCase);
 
     }
 
