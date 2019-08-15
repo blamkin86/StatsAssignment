@@ -40,6 +40,15 @@ Example output:
 4) Blank keys are not output
 5) Synchronized so changes during invocation are not returned 
 
+# To build and test code, and make the executable jar
+1) Install Java 8
+2) Install maven
+3) Install git
+4) Clone the repo (git required)
+5) Have access to the dependencies in pom.xml (internet access to maven repo)
+
+run mvn clean verify (this will execute all the unit and integration tests)
+
 # To run the executable jar
 From within the repo folder:
 
@@ -52,12 +61,4 @@ You can also run the jar with your own inputs, piped to the running jar
 Finally, you can run the jar with standard input - once you've finished typing, enter the single character 'q' on a separate line
 
 
-# To build and test code
-1) Install Java 8
-2) Install maven
-3) Install git
-4) Clone the repo (git required)
-5) Have access to the dependencies in pom.xml (internet access to maven repo)
-
-run mvn clean verify (this will execute all the unit and integration tests)
 
