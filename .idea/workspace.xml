@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="635e085e-b1f5-42d7-8d5c-d6d6b74eb7c9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ActionStats.java" afterPath="$PROJECT_DIR$/src/main/java/ActionStats.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,8 +32,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="235">
-                <caret line="10" column="51" lean-forward="false" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+              <first_editor relative-caret-position="260">
+                <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -43,12 +44,12 @@
       <file leaf-file-name="ActionStats.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ActionStats.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="48" column="47" lean-forward="false" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
+            <state relative-caret-position="175">
+              <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#511#530#0" expanded="true" />
-                <element signature="e#1837#1852#0" expanded="true" />
+                <element signature="e#481#500#0" expanded="true" />
+                <element signature="e#1807#1822#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -196,10 +197,10 @@
         <option value="$PROJECT_DIR$/src/main/java/entities/TimeTotal.java" />
         <option value="$PROJECT_DIR$/src/test/java/entities/TimeTotalTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/ActionAverageComparator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ActionStats.java" />
         <option value="$PROJECT_DIR$/src/main/java/entities/Action.java" />
         <option value="$PROJECT_DIR$/src/test/java/util/ActionStringParserTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/JsonUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ActionStats.java" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -243,6 +244,19 @@
               <item name="statsassignment" type="b2602c69:ProjectViewProjectNode" />
               <item name="statsassignment" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="statsassignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="statsassignment" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="statsassignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="statsassignment" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="statsassignment" type="b2602c69:ProjectViewProjectNode" />
@@ -535,7 +549,7 @@
       <option name="presentableId" value="Default" />
       <updated>1565881947772</updated>
       <workItem from="1565881951913" duration="5326000" />
-      <workItem from="1565888511742" duration="13232000" />
+      <workItem from="1565888511742" duration="13453000" />
     </task>
     <servers />
   </component>
@@ -572,7 +586,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18558000" />
+    <option name="totallyTimeSpent" value="18779000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1882" y="12" width="1784" height="956" extended-state="0" />
@@ -587,7 +601,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42527175" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21672556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2697291" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0625" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -676,8 +690,8 @@
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#511#530#0" expanded="true" />
-            <element signature="e#1837#1852#0" expanded="true" />
+            <element signature="e#481#500#0" expanded="true" />
+            <element signature="e#1807#1822#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -774,18 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ActionStats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="48" column="47" lean-forward="false" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#511#530#0" expanded="true" />
-            <element signature="e#1837#1852#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/entities/TimeTotalTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -843,11 +845,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ActionStats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#481#500#0" expanded="true" />
+            <element signature="e#1807#1822#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="235">
-            <caret line="10" column="51" lean-forward="false" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+          <first_editor relative-caret-position="260">
+            <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
             <folding />
           </first_editor>
           <second_editor />
