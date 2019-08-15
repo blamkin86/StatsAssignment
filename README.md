@@ -43,3 +43,6 @@ will run the executable with the assignment inputs, and provide output
 
 You can also run the jar with your own inputs, piped to the running jar
 
+Finally, you can run the jar with standard input - once you've finished typing, enter the single character 'q' on a separate line
+
+

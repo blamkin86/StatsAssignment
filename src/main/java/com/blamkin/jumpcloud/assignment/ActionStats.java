@@ -23,7 +23,10 @@ import static java.lang.System.exit;
 public class ActionStats {
 
     // our map of values
-    ConcurrentHashMap<String, TimeTotal> actionMap = new ConcurrentHashMap<String, TimeTotal>();
+    private ConcurrentHashMap<String, TimeTotal> actionMap = new ConcurrentHashMap<String, TimeTotal>();
+
+    // make it easy to exit from the command line
+    private static final String EXIT_CHAR = "Q";
 
     /**
      *  Add an action to the statistics gatherer
@@ -127,6 +130,12 @@ public class ActionStats {
             // start reading from the input
             String in = null;
             while ((in=bufReader.readLine()) != null) {
+
+                // maybe bail from command line
+                if (EXIT_CHAR.equalsIgnoreCase(in)) {
+                    break;
+                }
+
                 // read, but
                 // inform problems and ignore bad lines
                 try {
