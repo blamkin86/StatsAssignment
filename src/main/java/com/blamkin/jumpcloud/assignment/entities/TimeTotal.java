@@ -7,8 +7,8 @@ package com.blamkin.jumpcloud.assignment.entities;
 public class TimeTotal {
 
     // privates
-    private int count;
-    private long total;
+    private final int count;
+    private final int total;
 
     // make one
     public TimeTotal(int total) {
@@ -16,21 +16,17 @@ public class TimeTotal {
         this.total=total;
     }
 
-    // add to the total
-    public void addTime(int time) throws ArithmeticException {
-
-        // fail fast
-        this.total=Math.addExact(this.total, time);
-
-        // that worked, so one more in the bucket
-        this.count++;
+    // make one from another one
+    public TimeTotal(TimeTotal existingTotal, int thisTime) {
+        this.count = existingTotal.getCount()+1;
+        this.total = existingTotal.getTotal() + thisTime;
     }
 
     // get values
     public int getCount() {
         return this.count;
     }
-    public long getTotal() {
+    public int getTotal() {
         return this.total;
     }
 

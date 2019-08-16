@@ -37,24 +37,25 @@ public class ActionStats {
     public void addAction(String jsonAction) throws IllegalArgumentException {
 
         // create it, if possible
-        Action a = JsonUtils.parseActionString(jsonAction);
+        Action actionTotal = JsonUtils.parseActionString(jsonAction);
 
         // everybody wait on me
         // don't want any changes between the first put and the possible replace()
         synchronized (actionMap) {
 
             // here's the time total for this single action
-            TimeTotal thisTotal = new TimeTotal(a.getTime());
+            TimeTotal thisTotal = new TimeTotal(actionTotal.getTime());
 
             // always put it
-            // - collection returns prior value so we can recover
-            TimeTotal priorTotal = actionMap.put(a.getAction(), thisTotal);
+            // - collection returns prior value. if present
+            TimeTotal priorTotal = actionMap.put(actionTotal.getAction(), thisTotal);
 
             // wait, was there something out there?
             if (priorTotal!=null) {
-                // add the total to the prior value, replace this new one
-                priorTotal.addTime(a.getTime());
-                actionMap.replace(a.getAction(), thisTotal, priorTotal);
+                // we have actionTotal new total!
+                // make a new TimeTotal from our prior one and the new one
+                TimeTotal newTotal = new TimeTotal(priorTotal, thisTotal.getTotal());
+                actionMap.replace(actionTotal.getAction(), newTotal, priorTotal);
             }
         }
     }

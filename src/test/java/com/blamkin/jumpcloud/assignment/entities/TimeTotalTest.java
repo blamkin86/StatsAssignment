@@ -35,13 +35,13 @@ public class TimeTotalTest {
         TimeTotal tt = new TimeTotal(time);
 
         final int additionalTime = 200;
-        tt.addTime(additionalTime);
+        TimeTotal tt2 = new TimeTotal(tt, additionalTime);
 
         // we added two times together
-        assertEquals(2,tt.getCount());
+        assertEquals(2,tt2.getCount());
 
         // the total should match
-        assertEquals(time + additionalTime,tt.getTotal());
+        assertEquals(time + additionalTime,tt2.getTotal());
 
     }
 
@@ -52,5 +52,11 @@ public class TimeTotalTest {
         assertTrue(tt.equals(tt));
     }
 
+    @Test
+    public void timeTotal_equalDistinctObjects_areEqual() {
 
+        TimeTotal tt = new TimeTotal(3);
+        TimeTotal tt2 = new TimeTotal(3);
+        assertTrue(tt2.equals(tt));
+    }
 }
