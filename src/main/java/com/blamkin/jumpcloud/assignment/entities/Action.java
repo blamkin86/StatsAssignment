@@ -5,6 +5,8 @@ package com.blamkin.jumpcloud.assignment.entities;
  *
  * NOTE: there's no limitations on either action name or time
  * null/zero/negative are all accepted
+ * the JsON parser (utils folder) validates before populating
+ * this saves from a constructor with a possible exception
  *
  */
 public class Action {
