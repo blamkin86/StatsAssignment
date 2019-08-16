@@ -11,6 +11,7 @@ import java.util.Comparator;
 public class ActionAverageComparator implements Comparator<ActionAverage> {
 
     @Override
+    // NOTE: TODO: write test class
     public int compare(ActionAverage o1, ActionAverage o2) {
         if (o1==null) return -1;
         if (o2==null) return 1;

@@ -16,7 +16,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import static java.lang.System.exit;
 
 /**
- * Main class for tracking "action" statistics
+ * Main class for reporting "action" statistics
  *
  *
  */
@@ -32,7 +32,7 @@ public class ActionStats {
      *  Add an action to the statistics gatherer
      *
      * @param jsonAction
-     * @throws Exception
+     * @throws IllegalArgumentException
      */
     public void addAction(String jsonAction) throws IllegalArgumentException {
 
@@ -40,7 +40,7 @@ public class ActionStats {
         Action newAction = JsonUtils.parseActionString(jsonAction);
 
         // everybody wait on me
-        // don't want any changes between the first put and the possible replace()
+        // don't want any changes between the get and the possible replace()
         synchronized (actionMap) {
 
             // here's the time total for this single action
@@ -121,9 +121,10 @@ public class ActionStats {
         return null;
     }
 
-    // direct invocation from a pipe
+    // direct invocation from executable jar
     public static void main(String[] args) {
 
+        // read the input
         try ( InputStreamReader isReader = new InputStreamReader(System.in);
                 BufferedReader bufReader = new BufferedReader(isReader); ) {
 

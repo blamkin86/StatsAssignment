@@ -1,7 +1,7 @@
 package com.blamkin.jumpcloud.assignment.entities;
 
 /**
- * Object representing the count of an action and their total
+ * Object representing the count of an action and its total
  * E.G. jump:100 and jump:100 would be count = 2 and total = 200
  */
 public class TimeTotalCount {
@@ -17,6 +17,7 @@ public class TimeTotalCount {
     }
 
     // make one from another one
+    // this is how we increment totals and keep objects immutable
     public TimeTotalCount(TimeTotalCount existingTotal, int thisTime) {
         this.count = existingTotal.getCount()+1;
         this.total = existingTotal.getTotal() + thisTime;

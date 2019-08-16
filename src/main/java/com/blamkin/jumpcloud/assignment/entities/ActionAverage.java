@@ -13,6 +13,7 @@ public class ActionAverage {
     private String action;
     private double avg;
 
+    // make object: calculate average based on the input values
     public ActionAverage(String action, int count, long total) throws IllegalArgumentException {
         if (StringUtils.isEmpty(action)) {
             throw new IllegalArgumentException("Action cannot be empty");

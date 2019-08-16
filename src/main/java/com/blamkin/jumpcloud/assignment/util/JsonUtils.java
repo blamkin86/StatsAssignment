@@ -1,9 +1,7 @@
 package com.blamkin.jumpcloud.assignment.util;
 
-import com.blamkin.jumpcloud.assignment.entities.TimeTotalCount;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.blamkin.jumpcloud.assignment.entities.Action;
-import com.blamkin.jumpcloud.assignment.entities.ActionAverage;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang3.StringUtils;
 import org.json.JSONObject;
 
@@ -16,11 +14,11 @@ public class JsonUtils {
     // what json
 
     /**
-     * take a string, make an action
+     * take a string, make an action, or throw an exception
      *
      * @param jsonAction
      * @return
-     * @throws Exception
+     * @throws IllegalArgumentException
      */
     public static Action parseActionString(String jsonAction) throws IllegalArgumentException {
 
@@ -40,32 +38,8 @@ public class JsonUtils {
 
     }
 
-    // Given a key and a TimeTotalCount
-    // concoct the appropriate JsON return object
-    // invalid data -> return empty object rather than throw exception
-    public static String avgAction(String key, TimeTotalCount timeTotalCount) {
-
-        // valid data only
-        if (!StringUtils.isEmpty(key) && timeTotalCount !=null) {
-
-            // make the return object
-            // and calculate the average within
-            ActionAverage average = new ActionAverage(key, timeTotalCount.getCount(), timeTotalCount.getTotal());
-
-            try {
-                ObjectMapper objectMapper = new ObjectMapper();
-                return objectMapper.writeValueAsString(average);
-            } catch (Exception e) {
-                e.printStackTrace();
-                System.out.println("Unable to calculate average for " + timeTotalCount);
-            }
-        }
-
-        // default
-        return "{}";
-    }
-
     // validate according to our rules
+    // separated from parseActionString for testing
     public static final void validateInputActionString(String actionString) throws IllegalArgumentException {
 
         if (StringUtils.isEmpty(actionString)) {
