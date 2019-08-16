@@ -26,9 +26,18 @@ Examples:
 ```
 
 ## method getStats() returning string
-Output formatted JsON average by "action"
-Example output:
+Return each action added in addAction, and their average time value.
+Return is a JsON array of actions and times:
+```
+[
+  {
+    "action": "<value>",
+    "time": <integer>  
+  }
+]
+```
 
+Example output:
 ```
 [
 {"action":"jump","avg":150.0},
