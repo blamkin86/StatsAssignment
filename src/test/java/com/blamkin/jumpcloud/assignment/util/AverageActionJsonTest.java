@@ -1,7 +1,6 @@
 package com.blamkin.jumpcloud.assignment.util;
 
-import com.blamkin.jumpcloud.assignment.entities.Action;
-import com.blamkin.jumpcloud.assignment.entities.TimeTotal;
+import com.blamkin.jumpcloud.assignment.entities.TimeTotalCount;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -49,7 +48,7 @@ public class AverageActionJsonTest {
 
         // just one timeTotal, so we know the count and average
         final int total = 100;
-        TimeTotal tt = new TimeTotal(total);
+        TimeTotalCount tt = new TimeTotalCount(total);
 
         // that's an empty key
         String result= JsonUtils.avgAction("MyAction", tt);

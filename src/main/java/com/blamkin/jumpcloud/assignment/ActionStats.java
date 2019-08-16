@@ -3,7 +3,7 @@ package com.blamkin.jumpcloud.assignment;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.blamkin.jumpcloud.assignment.entities.Action;
 import com.blamkin.jumpcloud.assignment.entities.ActionAverage;
-import com.blamkin.jumpcloud.assignment.entities.TimeTotal;
+import com.blamkin.jumpcloud.assignment.entities.TimeTotalCount;
 import com.blamkin.jumpcloud.assignment.util.ActionAverageComparator;
 import com.blamkin.jumpcloud.assignment.util.JsonUtils;
 
@@ -23,7 +23,7 @@ import static java.lang.System.exit;
 public class ActionStats {
 
     // our map of values
-    private ConcurrentHashMap<String, TimeTotal> actionMap = new ConcurrentHashMap<String, TimeTotal>();
+    private ConcurrentHashMap<String, TimeTotalCount> actionMap = new ConcurrentHashMap<String, TimeTotalCount>();
 
     // make it easy to exit from the command line
     private static final String EXIT_CHAR = "Q";
@@ -37,25 +37,28 @@ public class ActionStats {
     public void addAction(String jsonAction) throws IllegalArgumentException {
 
         // create it, if possible
-        Action a = JsonUtils.parseActionString(jsonAction);
+        Action newAction = JsonUtils.parseActionString(jsonAction);
 
         // everybody wait on me
         // don't want any changes between the first put and the possible replace()
         synchronized (actionMap) {
 
             // here's the time total for this single action
-            TimeTotal thisTotal = new TimeTotal(a.getTime());
+            TimeTotalCount addTimeTotalCount = new TimeTotalCount(newAction.getTime());
 
-            // always put it
-            // - collection returns prior value so we can recover
-            TimeTotal priorTotal = actionMap.put(a.getAction(), thisTotal);
-
-            // wait, was there something out there?
-            if (priorTotal!=null) {
-                // add the total to the prior value, replace this new one
-                priorTotal.addTime(a.getTime());
-                actionMap.replace(a.getAction(), thisTotal, priorTotal);
+            // look for it
+            TimeTotalCount existingTotal = actionMap.get(newAction.getAction());
+            if (existingTotal==null) {
+                // just start with this one
+                actionMap.put(newAction.getAction(), addTimeTotalCount);
             }
+            else {
+                // we already have a total, let's combine
+                // and replace in the list
+                TimeTotalCount updatedTotal = new TimeTotalCount(existingTotal, newAction.getTime());
+                actionMap.replace(newAction.getAction(), updatedTotal);
+            }
+
         }
     }
 
@@ -82,7 +85,7 @@ public class ActionStats {
             // remove the synchronized
             // and any changes to this point will be captured
             // the entrySet does not change here after invocation
-            for (Map.Entry<String, TimeTotal> timeEntry: actionMap.entrySet() ) {
+            for (Map.Entry<String, TimeTotalCount> timeEntry: actionMap.entrySet() ) {
 
                 // individually, collect the good ones
                 try {

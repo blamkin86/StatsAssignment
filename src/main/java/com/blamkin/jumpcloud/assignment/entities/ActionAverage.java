@@ -21,7 +21,13 @@ public class ActionAverage {
             throw new IllegalArgumentException("Total cannot be less than zero");
         }
         this.action = action;
-        this.avg = total/count;
+
+        // to one significant digit of accuracy
+        this.avg = (double) (Math.round((double)total/count * 10))/10;
+    }
+
+    // default constructor for Jackson
+    public ActionAverage() {
     }
 
     public String getAction() {

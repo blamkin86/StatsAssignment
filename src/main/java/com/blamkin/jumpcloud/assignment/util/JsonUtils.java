@@ -1,9 +1,9 @@
 package com.blamkin.jumpcloud.assignment.util;
 
+import com.blamkin.jumpcloud.assignment.entities.TimeTotalCount;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.blamkin.jumpcloud.assignment.entities.Action;
 import com.blamkin.jumpcloud.assignment.entities.ActionAverage;
-import com.blamkin.jumpcloud.assignment.entities.TimeTotal;
 import org.apache.commons.lang3.StringUtils;
 import org.json.JSONObject;
 
@@ -40,24 +40,24 @@ public class JsonUtils {
 
     }
 
-    // Given a key and a TimeTotal
+    // Given a key and a TimeTotalCount
     // concoct the appropriate JsON return object
     // invalid data -> return empty object rather than throw exception
-    public static String avgAction(String key, TimeTotal timeTotal) {
+    public static String avgAction(String key, TimeTotalCount timeTotalCount) {
 
         // valid data only
-        if (!StringUtils.isEmpty(key) && timeTotal!=null) {
+        if (!StringUtils.isEmpty(key) && timeTotalCount !=null) {
 
             // make the return object
             // and calculate the average within
-            ActionAverage average = new ActionAverage(key, timeTotal.getCount(), timeTotal.getTotal());
+            ActionAverage average = new ActionAverage(key, timeTotalCount.getCount(), timeTotalCount.getTotal());
 
             try {
                 ObjectMapper objectMapper = new ObjectMapper();
                 return objectMapper.writeValueAsString(average);
             } catch (Exception e) {
                 e.printStackTrace();
-                System.out.println("Unable to calculate average for " + timeTotal);
+                System.out.println("Unable to calculate average for " + timeTotalCount);
             }
         }
 

@@ -70,6 +70,32 @@ public class ActionAverageTest {
         ActionAverage aa = new ActionAverage("anykey", 1,-1);
     }
 
+    @Test
+    public void actionAverage_withRoundUp_computesProperly() {
+
+        // this should round up to 2.5
+        final int count = 100;
+        final int time = 246;
+
+        ActionAverage aa = new ActionAverage("anykey", count, time);
+
+        assertEquals(2.5, aa.getAvg(),0.0);
+
+    }
+
+    @Test
+    public void actionAverage_withRoundDown_computesProperly() {
+
+        // this should round up to 2.5
+        final int count = 100;
+        final int time = 244;
+
+        ActionAverage aa = new ActionAverage("anykey", count, time);
+
+        assertEquals(2.4, aa.getAvg(),0.0);
+
+    }
+
 
 
 }
