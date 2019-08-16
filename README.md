@@ -8,7 +8,7 @@ class ActionStats
 in com.blamkin.jumpcloud.assignment;
 
 ## Method addAction(string) returning error
-Keeps track of average time for by action
+Add an action and time to track for that action.
 
 String input is formatted JsON, in the form:
 ```
