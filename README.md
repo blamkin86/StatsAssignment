@@ -45,6 +45,7 @@ Example output:
 ]
 ```
 
+Although not technically necessary, action values are sorted alphabetically for readability.
 (Note that JsON may be formatted in a simple contracted string)
 
 ## Acceptable "action" JsON objects:
@@ -54,7 +55,7 @@ Example output:
 
 ## results
 1) Sorted alphabetically by key
-2) One significant digit (double, not int: this differs from example)
+2) One significant digit (double, not int: this differs from requirements)
 3) Totals are not allowed to roll over MAX_INT size
 4) Blank keys are not output
 5) Synchronized so changes during invocation are not returned 
@@ -63,7 +64,7 @@ Example output:
 1) Install Java 8
 2) Install maven
 3) Install git
-4) Clone the repo (git required)
+4) Clone this repo 
 5) Have access to the dependencies in pom.xml (internet access to maven repo)
 
 run:
@@ -72,7 +73,7 @@ run:
 # To run the executable jar
 From within the repo folder:
 
->java -jar target/statsassignment-1.0-SNAPSHOT.jar < src/main/resources/exampleactions.json
+> java -jar target/statsassignment-1.0-SNAPSHOT.jar < src/main/resources/exampleactions.json
 
 will run the executable with the assignment inputs, and provide output
 
