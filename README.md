@@ -68,7 +68,9 @@ Although not technically necessary, action values are sorted alphabetically for 
 5) Have access to the dependencies in pom.xml (internet access to maven repo)
 
 run:
-> mvn clean verify (this will execute all the unit and integration tests)
+> mvn clean verify 
+
+(this will execute all the unit and integration tests)
 
 # To run the executable jar
 From within the repo folder:
