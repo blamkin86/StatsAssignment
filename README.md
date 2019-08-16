@@ -1,4 +1,4 @@
-# statsassignment
+# Project: statsassignment
 
 Programming assignment for tech interview
 
