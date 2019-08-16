@@ -1,23 +1,23 @@
 package com.blamkin.jumpcloud.assignment.entities;
 
 /**
- * Object representing the count of actions and their total
+ * Object representing the count of an action and their total
  * E.G. jump:100 and jump:100 would be count = 2 and total = 200
  */
-public class TimeTotal {
+public class TimeTotalCount {
 
     // privates
     private final int count;
     private final int total;
 
     // make one
-    public TimeTotal(int total) {
+    public TimeTotalCount(int total) {
         this.count=1;
         this.total=total;
     }
 
     // make one from another one
-    public TimeTotal(TimeTotal existingTotal, int thisTime) {
+    public TimeTotalCount(TimeTotalCount existingTotal, int thisTime) {
         this.count = existingTotal.getCount()+1;
         this.total = existingTotal.getTotal() + thisTime;
     }
@@ -32,7 +32,7 @@ public class TimeTotal {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("TimeTotal{");
+        final StringBuilder sb = new StringBuilder("TimeTotalCount{");
         sb.append("count=").append(count);
         sb.append(", total=").append(total);
         sb.append('}');
@@ -44,10 +44,10 @@ public class TimeTotal {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TimeTotal timeTotal = (TimeTotal) o;
+        TimeTotalCount timeTotalCount = (TimeTotalCount) o;
 
-        if (count != timeTotal.count) return false;
-        return total == timeTotal.total;
+        if (count != timeTotalCount.count) return false;
+        return total == timeTotalCount.total;
     }
 
     @Override
