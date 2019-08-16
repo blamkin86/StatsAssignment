@@ -1,9 +1,11 @@
 # statsassignment
 
-Offer class ActionStats
-in com.blamkin.jumpcloud.assignment;
+Programming assignment for tech interview
 
-This class keeps running totals of "action" (integer) time values, and collates and reports a sorted list of average times by action.
+This project offers a class that keeps running totals of "action" (integer) time values, and collates and reports a sorted list of average times by action.
+
+class ActionStats
+in com.blamkin.jumpcloud.assignment;
 
 ## Method addAction(string) returning error
 Keeps track of average time for all input strings such as
@@ -27,8 +29,6 @@ Example output:
 
 (Note that JsON may be formatted in a simple contracted string)
 
-# Notes
-
 ## Acceptable "action" JsON objects:
 1) Must include both "action" and "time" values (missing/null/empty not allowed)
 2) Time values must be natural numbers (0 or greater)
@@ -48,12 +48,13 @@ Example output:
 4) Clone the repo (git required)
 5) Have access to the dependencies in pom.xml (internet access to maven repo)
 
-run mvn clean verify (this will execute all the unit and integration tests)
+run:
+> mvn clean verify (this will execute all the unit and integration tests)
 
 # To run the executable jar
 From within the repo folder:
 
-java -jar target/statsassignment-1.0-SNAPSHOT.jar < src/main/resources/exampleactions.json
+>java -jar target/statsassignment-1.0-SNAPSHOT.jar < src/main/resources/exampleactions.json
 
 will run the executable with the assignment inputs, and provide output
 
