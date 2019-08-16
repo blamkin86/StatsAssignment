@@ -4,7 +4,7 @@ Programming assignment for tech interview
 
 This project offers a class that keeps running totals of "action" (integer) time values, and collates and reports a sorted list of average times by action.
 
-class ActionStats
+# class ActionStats()
 in com.blamkin.jumpcloud.assignment;
 
 ## Method addAction(string) returning error
