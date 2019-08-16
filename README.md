@@ -8,8 +8,17 @@ class ActionStats
 in com.blamkin.jumpcloud.assignment;
 
 ## Method addAction(string) returning error
-Keeps track of average time for all input strings such as
+Keeps track of average time for by action
 
+String input is formatted JsON, in the form:
+```
+{
+  "action": "<value>",
+  "time": <integer>
+}
+```
+
+Examples:
 ```
 {"action":"jump", "time":100}
 {"action":"run", "time":75}
